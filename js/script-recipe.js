@@ -24,7 +24,7 @@ $(document).ready(function(){
 		$(".js-show-make").removeClass("active");
 	});
 
-
-
+	//para redireccionar a index.html
+	$(".js-back").attr("href","index.html");
 
 });
