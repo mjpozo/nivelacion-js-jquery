@@ -49,7 +49,7 @@ function renderRecipe(recipe) {
 
 }
 
-	//una vez el DOM está listo
+	//una vez el DOM de template-activity está listo
 	renderActivities(activities);
 
 
