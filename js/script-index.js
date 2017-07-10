@@ -47,11 +47,10 @@ function renderRecipe(recipe) {
 	//creamos el html con DOM
 	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + recipe.title + '</span><span class="metadata-recipe"><span class="author-recipe">' + recipe.source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark"></span> </span></span></span><img src="img/recipes/320x350/' + recipe.name + '.jpg" /></a>');
 
-	//una vez el DOM está listo
-	renderActivities(activities);
-
 }
 
+	//una vez el DOM está listo
+	renderActivities(activities);
 
 
 /*
@@ -75,7 +74,7 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
-	
+	$(".list-activities").append('<a href="#" class="item-activity"><span class="attribution"><span class="avatar"><img src="' + recipe.userAvatar + '" class="image-avatar"></span><span class="meta"><span class="author">' + recipe.userName + '</span> made <span class="recipe">' + recipe.recipeName + '</span>: ' + recipe.text + '<span class="location">&mdash;' + recipe.place + '</span></span></span><div class="bg-image" style="background-image: url(' + recipe.image + ');"></div></a>');
 }
 
 
