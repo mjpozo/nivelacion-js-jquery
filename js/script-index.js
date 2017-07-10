@@ -20,11 +20,11 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	//console.log('Recipes: ', recipesArray);
-	
+
 	//se recorre el arreglo
 	recipesArray.forEach(function(element){
 		if (element.highlighted == true){
-			console.log("indice: " + recipesArray.indexOf(element));
+			//console.log("indice: " + recipesArray.indexOf(element));
 
 			//definimos el parámetro de la función renderRecipe
 			var parametro = recipesArray[recipesArray.indexOf(element)];
@@ -43,6 +43,20 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+	console.log(recipe.name);
+
+	//creamos el html con DOM
+	$("a").addClass("item-recipe");
+	$(".item-recipe").attr("href","#");
+
+	$(".item-recipe").append('<span class="attribution"></span>').append('<img src="img/recipes/320x350/' + recipe.name + '.jpg" />');
+	$(".attribution").append('<span class="title-recipe"></span>').append('<span class="metadata-recipe"></span>');
+	$(".metadata-recipe").append('<span class="author-recipe"></span>').append('<span class="bookmarks-recipe"></span>');
+	$(".bookmarks-recipe").append('<span class="icon-bookmark"></span>');
+
+	$(".title-recipe").append(recipe.title);
+	$(".author-recipe").append(recipe.source.name);
+
 }
 
 
