@@ -19,7 +19,20 @@ $(document).ready( function(){
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	//console.log('Recipes: ', recipesArray);
+	
+	//se recorre el arreglo
+	recipesArray.forEach(function(element){
+		if (element.highlighted == true){
+			console.log("indice: " + recipesArray.indexOf(element));
+
+			//definimos el parámetro de la función renderRecipe
+			var parametro = recipesArray[recipesArray.indexOf(element)];
+
+			//se llama la función renderRecipe
+			renderRecipe(parametro);
+		}
+	})
 }
 
 /*
