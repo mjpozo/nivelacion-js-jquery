@@ -42,25 +42,13 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
-	console.log("id: " + recipesArray.indexOf(recipe));
-
-	//definimos una id
+	//console.log('Voy a pintar la receta: ', recipe);
 
 	//creamos el html con DOM
-	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + recipe.title + '</span><span class="metadata-recipe"><span class="author-recipe">' + recipe.source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark"></span> </span></span></span><img src="img/recipes/320x350/' + recipe.name + '.jpg" /></a>')
-	//'<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + recipe.title + '</span></span></a>')//.append('<span class="title-recipe">' + recipe.title + '</span>')//.append('<span class="metadata-recipe"></span>').append('<span class="author-recipe">' + recipe.source.name + '</span>').append('<span class="bookmarks-recipe"></span>').append('<span class="icon-bookmark"></span>');
+	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + recipe.title + '</span><span class="metadata-recipe"><span class="author-recipe">' + recipe.source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark"></span> </span></span></span><img src="img/recipes/320x350/' + recipe.name + '.jpg" /></a>');
 
-	/*$(".item-recipe").append('<span class="attribution"></span>').append('<img src="img/recipes/320x350/' + recipe.name + '.jpg" />');
-	$(".attribution").append('<span class="title-recipe"></span>').append('<span class="metadata-recipe"></span>');
-	$(".metadata-recipe").append('<span class="author-recipe"></span>').append('<span class="bookmarks-recipe"></span>');
-	$(".bookmarks-recipe").append('<span class="icon-bookmark"></span>');
-
-	$(".title-recipe").append(recipe.title);
-	$(".author-recipe").append(recipe.source.name);*/
-
-	//el div con clase "list-recipes" adopta lo hecho en el DOM
-	//$(".list-recipes").append($(".item-recipe"));
+	//una vez el DOM está listo
+	renderActivities(activities);
 
 }
 
@@ -71,6 +59,14 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
+	activitiesArray.forEach(function(element){
+		console.log(renderActivity(element));
+
+		if (activitiesArray.length > 0){
+			$(".wrapper-message").hide();
+		}
+
+	});
 }
 
 /*
