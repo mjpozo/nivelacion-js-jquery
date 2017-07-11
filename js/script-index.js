@@ -68,13 +68,17 @@ function renderActivities(activitiesArray) {
 	});
 }
 
+//var avatar = _.pluck(activities,'userAvatar');
+
 /*
 * Función que se encarga de pintar una actividad
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
+
+//NO FUNCIONA UNDERSCORE, NO SÉ SI PORQUE LO IMPLEMENTÉ MAL O PORQUE ENLACÉ MAL EL ARCHIVO
 function renderActivity(recipe) {
-	$(".list-activities").append('<a href="#" class="item-activity"><span class="attribution"><span class="avatar"><img src="' + recipe.userAvatar + '" class="image-avatar"></span><span class="meta"><span class="author">' + recipe.userName + '</span> made <span class="recipe">' + recipe.recipeName + '</span>: ' + recipe.text + '<span class="location">&mdash;' + recipe.place + '</span></span></span><div class="bg-image" style="background-image: url(' + recipe.image + ');"></div></a>');
+	$(".list-activities").append('<a href="#" class="item-activity"><span class="attribution"><span class="avatar"><img src="' + /*avatar*/ recipe.userAvatar /*_.pluck(recipe,'userAvatar')*/ + '" class="image-avatar"></span><span class="meta"><span class="author">' + recipe.userName /*_.pluck(recipe,'userName')*/ + '</span> made <span class="recipe">' + recipe.recipeName + '</span>: ' + recipe.text + '<span class="location">&mdash;' + recipe.place + '</span></span></span><div class="bg-image" style="background-image: url(' + recipe.image + ');"></div></a>');
 }
 
 
